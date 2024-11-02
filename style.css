@@ -1,11 +1,19 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     overflow: hidden;
 }
 
-.scene{
+section{
+    background-image: linear-gradient(#000721, #00145c);
+    font-family: 'Creepster';
+    color: white;
+}
+
+.scene {
     opacity: 0;
     transition: opacity 1s ease-in-out;
     position: absolute;
@@ -13,24 +21,45 @@
     height: 100%;
 }
 
-.scene.active{
+.scene.active {
     opacity: 1;
     z-index: 1;
 }
 
-.hidden{
-    display: none;
+.hidden {
+    opacity: 0;
+    z-index: -1;
 }
 
-.fade{
+.fade {
     animation: fadeIn 2s forwards;
 }
 
-@keyframes fadeIn{
-    from{
-        opacity:0;
+.text h1{
+    text-align: center;
+    font-size: 70px;
+    margin-top: 20%;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
     }
-    to{
+    to {
         opacity: 1;
     }
+}
+
+.button{
+    text-align: center;
+}
+
+.button button{
+    margin-top: 20%;
+    padding: 0 50px;
+    font-size: 50px;
+    background: transparent;
+    color: white;
+    font-family: 'Creepster';
+    border: 2px solid #edca00;
 }
