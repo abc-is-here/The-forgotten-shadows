@@ -1,196 +1,262 @@
-@import url('https://fonts.googleapis.com/css2?family=Creepster&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Creepster&display=swap");
 
 * {
-    margin: auto;
-    padding: 0;
-    box-sizing: border-box;
-    overflow: hidden;
+  margin: auto;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
 }
 
-section{
-    background-image: linear-gradient(#000721, #00145c);
-    font-family: 'Creepster';
-    color: white;
+section {
+  background-image: linear-gradient(#000721, #00145c);
+  font-family: "Creepster", sans-serif;
+  color: white;
 }
 
 .scene {
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-    position: absolute;
-    width: 100%;
-    height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
 .scene.active {
-    opacity: 1;
-    z-index: 1;
+  opacity: 1;
+  z-index: 1;
 }
 
 .hidden {
-    opacity: 0;
-    z-index: -1;
+  opacity: 0;
+  z-index: -1;
 }
 
 .fade {
-    animation: fadeIn 2s forwards;
+  animation: fadeIn 2s forwards;
 }
 
-.text h1{
-    text-align: center;
-    font-size: 70px;
-    margin-top: 20%;
+.text h1 {
+  text-align: center;
+  font-size: 70px;
+  margin-top: 20%;
 }
 
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.button{
-    text-align: center;
+.button {
+  text-align: center;
 }
 
-.button button{
-    margin-top: 20%;
-    padding: 0 50px;
-    font-size: 50px;
-    background: transparent;
-    color: white;
-    font-family: 'Creepster';
-    border: 2px solid #edca00;
+.button button {
+  margin-top: 20%;
+  padding: 0 50px;
+  font-size: 50px;
+  background: transparent;
+  color: white;
+  font-family: "Creepster", sans-serif;
+  border: 2px solid #edca00;
 }
 
-.room{
-    background: #00000040;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+.room {
+  background: #00000040;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  perspective: 500px;
 }
 
-.room{
-    perspective: 500px;
+.face {
+  height: 600px;
+  width: 600px;
+  background: black;
 }
 
-.face{
-    height: 600px;
-    width: 600px;
-    background: black;
+.left {
+  position: relative;
+  left: -600px;
+  top: 1200px;
 }
 
-.left{
-    position: relative;
-    left: -600px;
-    top: 1200px;
+.right {
+  position: relative;
+  left: 600px;
+  top: -1200px;
 }
 
-.right{
-    position: relative;
-    left: 600px;
-    top: -1200px;
+.back-face {
+  background: #750800;
 }
 
-.back-face{
-    background: #750800;
+.top {
+  transform-origin: bottom;
+  transform: rotateX(90deg);
+  background: linear-gradient(to right, black 4px, transparent 4px),
+    linear-gradient(to bottom, black 4px, transparent 4px);
+  background-color: #990c02;
+  background-size: 46px 46px;
 }
 
-.top{
-    transform-origin: bottom;
-    transform: rotateX(90deg);
-    background: linear-gradient(to right, black 4px, transparent 4px), linear-gradient(to bottom, black 4px, transparent 4px);
-    background-color: #990c02;
-    background-size: 46px 46px;
-}
-.bottom{
-    transform-origin: top;
-    transform: rotateX(-90deg);
-    background: linear-gradient(to right, black 4px, transparent 4px), linear-gradient(to bottom, black 4px, transparent 4px);
-    background-color: #990c02;
-    background-size: 46px 46px;
+.bottom {
+  transform-origin: top;
+  transform: rotateX(-90deg);
+  background: linear-gradient(to right, black 4px, transparent 4px),
+    linear-gradient(to bottom, black 4px, transparent 4px);
+  background-color: #990c02;
+  background-size: 46px 46px;
 }
 
-.left{
-    transform-origin: right;
-    transform: rotateY(-90deg);
-    background: #400501;
+.left {
+  transform-origin: right;
+  transform: rotateY(-90deg);
+  background: #400501;
 }
 
-.right{
-    transform-origin: left;
-    transform: rotateY(90deg);
-    background: #400501;
+.right {
+  transform-origin: left;
+  transform: rotateY(90deg);
+  background: #400501;
 }
 
-.window{
-    width: 100px;
-    height: 200px;
-    background: #00ab9d;
-    position: relative;
-    top: 190px;
+.window {
+  width: 100px;
+  height: 200px;
+  background: #00ab9d;
+  position: relative;
+  top: 290px;
 }
 
-.bed{
-    width: 200px;
-    height: 50px;
-    background: #333;
-    position: relative;
-    transform-style: preserve-3D;
-    transform: rotateX(10deg) rotateY(-20deg);
-    top: 150px;
-    left: 80px;
+.bed {
+  width: 140px;
+  height: 400px;
+  background: #fff;
+  position: relative;
+  top: 150px;
+  left: 140px;
 }
 
-.bed .top{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #555;
-    transform: translateZ(50px);
+.door {
+  width: 90px;
+  height: 200px;
+  background: #662e00;
+  position: relative;
+  top: 400px;
 }
 
-.bed .headboard{
-    position: absolute;
-    width: 200px;
-    height: 80px;
-    background: #444;
-    transform: rotateX(90deg) translateY(-50px);
-    transform-origin: top;
-    top: -80px;
+.clock {
+  height: 70px;
+  width: 70px;
+  border-radius: 50%;
+  background: #fff;
+  position: relative;
+  border: 4px solid black;
+  top: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.bed .side-left{
-    position: absolute;
-    width: 50px;
-    height: 100%;
-    background: #222;
-    transform: rotateY(-90deg) translateX(50px);
-    transform-origin: right;
+.hour-hand {
+  height: 13px;
+  width: 3px;
+  background: black;
+  position: absolute;
+  top: 20px;
+  transform-origin: bottom;
+  transform: rotate(45deg);
 }
 
-.bed .leg{
-    position: absolute;
-    width: 10px;
-    height: 30px;
-    backgroun: #111;
+.center {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: black;
+  position: absolute;
+  top: 30px;
+  left: 28px;
 }
 
-.bed .leg.leg1{
-    top: 50px;
-    left: 0;
+.minute-hand {
+  height: 30px;
+  width: 2px;
+  background: black;
+  position: absolute;
+  top: 3px;
+  transform-origin: bottom;
+  transform: rotate(90deg);
+  animation: minuteHand 30s infinite linear;
 }
-.bed .leg.leg1{
-    top: 50px;
-    right: 0;
+
+@keyframes minuteHand {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
-.bed .leg.leg1{
-    bottom: 0px;
-    left: 0;
+
+.light {
+  position: absolute;
+  width: 200px;
+  height: 600px;
+  top: 100px;
+  left: 180px;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  opacity: 0.6;
+  transform: rotate(-60deg);
+  pointer-events: none;
+  filter: blur(5px);
+  animation: rayFade 5s infinite alternate;
 }
-.bed .leg.leg1{
-    bottom: 0px;
-    right: 0;
+
+@keyframes rayFade {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+.knob {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  background: #000;
+  border-radius: 50%;
+  top: 100px;
+  left: 26px;
+}
+
+.sideTable {
+  position: relative;
+  width: 70px;
+  height: 220px;
+  background: #400501;
+  top: 300px;
+  right: 30px;
+}
+
+.tabletop {
+  position: relative;
+  width: 70px;
+  height: 20px;
+  background: #ab4a00;
+  top: 10px;
+}
+
+.tableEffect {
+  position: relative;
+  width: 154px;
+  height: 200px;
+  background: #400501;
+  right: 66px;
 }
