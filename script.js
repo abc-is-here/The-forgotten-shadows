@@ -19,3 +19,8 @@ function nextScene() {
 }
 
 document.addEventListener('click', nextScene);
+
+const restartButton = document.querySelector('.restart');
+restartButton.addEventListener('click', () => {
+    showScene(0);
+});
