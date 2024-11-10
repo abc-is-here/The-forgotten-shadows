@@ -1,11 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Creepster&display=swap");
 
-:root{
-  --front-cloud-color: #253977;
-  --middle-cloud-color: #081d5a;
-  --back-cloud-color: #051238;
-}
-
 * {
   margin: auto;
   padding: 0;
@@ -517,3 +511,129 @@ section {
   position: absolute;
 }
 
+#scene6 {
+  background: #0a0b1a;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+#sil-cont {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+#moon {
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle at 30% 30%, #f9f9f9, #c0c0c0);
+  border-radius: 50%;
+  position: absolute;
+  top: 20%;
+  left: 20%;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  z-index: 5;
+}
+
+#moon-layer-1, #moon-layer-2, #moon-layer-3 {
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1), transparent);
+}
+
+#moon-layer-1 {
+  width: 250px;
+  height: 250px;
+  z-index: 4;
+}
+
+#moon-layer-2 {
+  width: 350px;
+  height: 350px;
+  z-index: 3;
+}
+
+#moon-layer-3 {
+  width: 450px;
+  height: 450px;
+  z-index: 2;
+}
+
+#clouds2 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+}
+
+#back, #middle, #base {
+  position: absolute;
+  width: 200%;
+  height: auto;
+  display: flex;
+  gap: 50px;
+  animation: cloudMove 40s linear infinite;
+}
+
+#back { bottom: 80%; }
+#middle { bottom: 70%; }
+#base { bottom: 60%; }
+
+.bubbles {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background: #ffffff40;
+  position: absolute;
+  animation: bubbleFloat 6s ease-in-out infinite;
+  pointer-events: none;
+}
+
+#bubble-1 { bottom: 10%; left: 10%; animation-delay: 0s; }
+#bubble-2 { bottom: 20%; left: 20%; animation-delay: 1s; }
+#bubble-3 { bottom: 15%; left: 30%; animation-delay: 2s; }
+#bubble-4 { bottom: 25%; left: 40%; animation-delay: 0.5s; width: 20px; height: 20px; }
+#bubble-5 { bottom: 18%; left: 50%; animation-delay: 1.5s; width: 10px; height: 10px; }
+#bubble-6 { bottom: 30%; left: 60%; animation-delay: 2.5s; width: 18px; height: 18px; }
+#bubble-7 { bottom: 12%; left: 70%; animation-delay: 1s; width: 12px; height: 12px; }
+#bubble-8 { bottom: 22%; left: 80%; animation-delay: 3s; width: 14px; height: 14px; }
+#bubble-9 { bottom: 27%; left: 90%; animation-delay: 0.3s; width: 16px; height: 16px; }
+#bubble-10 { bottom: 20%; left: 75%; animation-delay: 1.7s; width: 13px; height: 13px; }
+
+#ground {
+  width: 100%;
+  height: 20%;
+  background: linear-gradient(#000, #141414);
+  position: absolute;
+  bottom: 0;
+}
+
+@keyframes cloudMove {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes bubbleFloat {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-30px); opacity: 0; }
+}
+
+#man img{
+  width: 200px;
+  position: absolute;
+  bottom: 17%;
+  left: 50%;
+  transform: translateX(-50%);
+}
