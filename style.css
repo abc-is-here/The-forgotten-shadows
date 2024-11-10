@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Creepster&display=swap");
 
+:root{
+  --front-cloud-color: #253977;
+  --middle-cloud-color: #081d5a;
+  --back-cloud-color: #051238;
+}
+
 * {
   margin: auto;
   padding: 0;
@@ -62,6 +68,13 @@ section {
   color: white;
   font-family: "Creepster", sans-serif;
   border: 2px solid #edca00;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.button button:hover{
+  background: #edca00;
+  color: #000;
 }
 
 .room {
@@ -451,3 +464,56 @@ section {
   left: 5%;
   top: 5%;
 }
+
+.door-wall{
+  height: 70vh;
+  width: 70vh;
+  background: #750800;
+  margin: 15vh auto;
+}
+
+.door2{
+  position: absolute;
+  width: 30vh;
+  height: 45vh;
+  background: #662e00;
+  top: 40%;
+  left: 43%;
+}
+
+.knob1{
+  position: absolute;
+  width: 5vh;
+  height: 5vh;
+  background: #301e00;
+  border-radius: 50%;
+  top: 50%;
+  left: 90%;
+}
+
+#scene5{
+  background-image: linear-gradient(#00001c, #010136);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container{
+  margin-left: 300px;
+  position: absolute;
+  margin-top: 90px;
+}
+
+.cloud{
+  opacity: 0.1;
+  position: absolute;
+}
+.cloud2{
+  opacity: 0.2;
+  position: absolute;
+}
+
+.cloud3{
+  opacity: 0.3;
+  position: absolute;
+}
+
